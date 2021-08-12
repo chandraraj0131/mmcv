@@ -174,7 +174,7 @@ def get_extensions():
             libraries=libraries)
         extensions.append(ext_ops)
 
-    if os.getenv('MMCV_WITH_OPS', '0') == '0':
+    if os.getenv('MMCV_WITH_OPS', '1') == '0':
         return extensions
 
     if EXT_TYPE == 'parrots':
@@ -314,7 +314,7 @@ def get_extensions():
 
 
 setup(
-    name='mmcv' if os.getenv('MMCV_WITH_OPS', '0') == '0' else 'mmcv-full',
+    name='mmcv' if os.getenv('MMCV_WITH_OPS', '1') == '0' else 'mmcv-full',
     version=get_version(),
     description='OpenMMLab Computer Vision Foundation',
     keywords='computer vision',
